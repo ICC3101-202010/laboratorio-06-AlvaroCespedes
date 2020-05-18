@@ -22,8 +22,21 @@ namespace Lab6
                 {
                     case "Si":
                         Console.Clear();
-                        empresa = LoadEmpresa();//Manejo de excepciones.
-                        //Ver cuando me tira error.
+                        try
+                        {
+                            empresa = LoadEmpresa();
+                            Console.WriteLine("Ya hay empresas guardadas, favor de probar 'Datos'\nPara ver informacion en el menu.");
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("No hay empresas en el archivo. Favor de crear una.");
+                            Console.WriteLine("Nombre de la empresa: ");
+                            string nombre1 = Console.ReadLine();
+                            Console.WriteLine("Rut de la empresa: ");
+                            string rut1 = Console.ReadLine(); //VER MANEJO DE EXCEPCIONES CUANDO EL USUARIO SE EQUIVOQUE.
+                            empresa.Add(new Empresa(nombre1, rut1));
+                            SaveEmpresa(empresa);
+                        }
                         break;
 
                     case "No":
@@ -38,6 +51,7 @@ namespace Lab6
                         break;
 
                     case "Datos":
+                        Console.Clear();
                         ShowEmpresa(empresa);
                         break;
 
@@ -86,5 +100,6 @@ namespace Lab6
             }
             Console.WriteLine();
         }
+        //Crear metodo para la excepcion
     }
 }
