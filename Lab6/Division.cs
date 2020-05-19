@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab6
 {
-    [Serializable]
+    [Serializable] //Clase padre de las divisiones
     class Division //Para cada nivel de division existe una persona encargada
     {
         private string nombre;

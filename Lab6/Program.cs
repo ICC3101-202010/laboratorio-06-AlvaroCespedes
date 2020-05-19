@@ -52,6 +52,8 @@ namespace Lab6
 
                     case "Datos":
                         Console.Clear();
+                        Console.WriteLine("Aca puede ver la informacion de la empresa: ");
+                        Console.WriteLine("Nombre empresa y rut.");
                         ShowEmpresa(empresa);
                         break;
 

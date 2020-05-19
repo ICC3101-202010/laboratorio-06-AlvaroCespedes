@@ -22,8 +22,6 @@ namespace Lab6
         }
         public override string ToString()
         {
-            Console.WriteLine("Aca puede ver la informacion de la empresa: ");
-            Console.WriteLine("Nombre empresa y rut.");
             return Nombre + ": " + Rut;
         }
     }
